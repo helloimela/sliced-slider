@@ -10,23 +10,3 @@ body {
   color: black;
   background-color: white;
 }
-
-.slideWrapper {
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  ul {
-    list-style: none;
-    grid-area: center;
-    display: grid;
-    grid-auto-flow: column;
-    height: 80vh;
-  }
-  .slideItemList {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
-}

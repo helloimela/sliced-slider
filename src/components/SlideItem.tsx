@@ -1,18 +1,31 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { SlideImage } from './SlideImage';
 
-import './SlideItem.scss';
+import styles from './SlideItem.module.scss';
+import { SlideItemProps } from './types';
 
-interface SlideItemProps {
-  src: string;
-  offset?: string;
-}
+export const SlideItem: FC<SlideItemProps> = ({ images, url, title }) => {
+  const [hoverOffset, setHoverOffset] = useState<string>('50%');
 
-export const SlideItem: FC<SlideItemProps> = ({ src, offset }) => {
+  const handleSlideHover = (e: React.MouseEvent) => {
+    const innerWidth = window.innerWidth;
+    const calcOffset = (e.clientX / innerWidth) * 100;
+    setHoverOffset(`${calcOffset}%`);
+  };
+
   return (
-    <img
-      className="slideItem"
-      src={src}
-      style={{ objectPosition: `${offset} 50%` }}
-    />
+    <div className={styles.slideWrapper}>
+      <ul className={styles.slideListParent} onMouseMove={(e) => handleSlideHover(e)}>
+        {images.map(({ src }, index) => (
+          <li
+            key={index}
+            className={styles.slideItemList}
+            //style={{ transform: 'translateY(17px)' }}
+          >
+            <SlideImage src={src} offset={hoverOffset} />
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };

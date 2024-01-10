@@ -1,51 +1,35 @@
-import { FC, useState } from 'react';
-import { SlideItem } from './components/SlideItem';
+import { FC } from 'react';
+import { Slider } from './components/Slider';
 import './style.scss';
+import { SlideItemProps } from './components/types';
 
 export const App: FC<{ name: string }> = ({ name }) => {
-  const [hoverOffset, setHoverOffset] = useState<string>('50%');
-
-  const handleSlideHover = (e: React.MouseEvent) => {
-    const innerWidth = window.innerWidth;
-    const calcOffset = (e.clientX / innerWidth) * 100;
-    setHoverOffset(`${calcOffset}%`);
-  };
+  const slides: SlideItemProps[] = [
+    {
+      images: [
+        {
+          src: 'https://picsum.photos/id/12/800/600',
+        },
+        {
+          src: 'https://picsum.photos/id/13/800/600',
+        },
+        {
+          src: 'https://picsum.photos/id/14/800/600',
+        },
+        {
+          src: 'https://picsum.photos/id/15/800/600',
+        },
+        {
+          src: 'https://picsum.photos/id/16/800/600',
+        },
+      ],
+      url: 'https://www.google.com/',
+      title: 'When ocean rises',
+    },
+  ];
   return (
     <div>
-      <div className="slideWrapper">
-        <ul onMouseMove={(e) => handleSlideHover(e)}>
-          <li className="slideItemList">
-            <SlideItem
-              src="https://picsum.photos/id/14/600/800"
-              offset={hoverOffset}
-            />
-          </li>
-          <li className="slideItemList">
-            <SlideItem
-              src="https://picsum.photos/id/15/600/800"
-              offset={hoverOffset}
-            />
-          </li>
-          <li className="slideItemList">
-            <SlideItem
-              src="https://picsum.photos/id/16/600/800"
-              offset={hoverOffset}
-            />
-          </li>
-          <li className="slideItemList">
-            <SlideItem
-              src="https://picsum.photos/id/17/600/800"
-              offset={hoverOffset}
-            />
-          </li>
-          <li className="slideItemList">
-            <SlideItem
-              src="https://picsum.photos/id/13/600/800"
-              offset={hoverOffset}
-            />
-          </li>
-        </ul>
-      </div>
+      <Slider slides={slides} />
     </div>
   );
 };
