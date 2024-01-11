@@ -1,20 +1,21 @@
-.slideWrapper {
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-  }
-  .slideListParent {
-    list-style: none;
-    grid-area: center;
-    display: grid;
-    grid-auto-flow: column;
-    height: 80vh;
-  }
-  .slideItemList {
-    list-style: none;
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-  }
+.slideListParent,
+.slideListParent li {
+  margin: 0;
+  padding: 0;
+}
+
+.slideListParent {
+  list-style: none;
+  position: absolute;
+  grid-area: center;
+  display: grid;
+  grid-auto-flow: column;
+  height: 80vh;
+}
+
+.slideItemList {
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }

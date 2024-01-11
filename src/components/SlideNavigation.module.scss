@@ -1,0 +1,17 @@
+button {
+  display: block;
+  text-indent: -19999px;
+  border: none;
+  width: 100%;
+  height: 3px;
+  background-color: #ebe5e6;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-out;
+  &:hover {
+    background-color: #e1cccf;
+  }
+  &.buttonActive {
+    background-color: #d05663;
+  }
+}

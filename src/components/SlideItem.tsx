@@ -14,7 +14,6 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title }) => {
   };
 
   return (
-    <div className={styles.slideWrapper}>
       <ul className={styles.slideListParent} onMouseMove={(e) => handleSlideHover(e)}>
         {images.map(({ src }, index) => (
           <li
@@ -26,6 +25,5 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title }) => {
           </li>
         ))}
       </ul>
-    </div>
   );
 };

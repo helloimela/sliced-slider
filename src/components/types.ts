@@ -12,3 +12,9 @@ export interface SlideItemProps {
 export interface SliderProps {
   slides: SlideItemProps[];
 }
+
+export interface SlideNavigationProps {
+  title?: string;
+  active: boolean;
+  onNavClick?: () => void;
+}
