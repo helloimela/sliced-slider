@@ -2,6 +2,7 @@ import { SlideItemProps } from "./components/types";
 
 export const slides: SlideItemProps[] = [
   {
+    id: 1,
     images: [
       {
         src: 'https://picsum.photos/id/12/800/600',
@@ -23,6 +24,7 @@ export const slides: SlideItemProps[] = [
     title: 'When ocean rises',
   },
   {
+    id: 2,
     images: [
       {
         src: 'https://picsum.photos/id/72/800/600',
@@ -43,6 +45,7 @@ export const slides: SlideItemProps[] = [
     url: 'https://www.google.com/',
     title: 'Still life perfection',
   }, {
+    id: 3,
     images: [
       {
         src: 'https://picsum.photos/id/20/800/600',

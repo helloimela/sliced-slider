@@ -11,6 +11,12 @@
   display: grid;
   grid-auto-flow: column;
   height: 80vh;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+
+  &.activeSlide {
+    opacity: 1;
+  }
 }
 
 .slideItemList {

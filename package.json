@@ -16,6 +16,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "classnames": "^2.5.1",
     "css-modules-typescript-loader": "^4.0.1",
     "react-scripts": "latest"
   },

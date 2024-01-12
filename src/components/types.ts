@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export interface SlideImageProps {
   src: string;
   offset?: string;
@@ -7,6 +9,8 @@ export interface SlideItemProps {
   images: SlideImageProps[];
   title?: string;
   url: string;
+  id: number;
+  active?: boolean;
 }
 
 export interface SliderProps {
@@ -14,7 +18,8 @@ export interface SliderProps {
 }
 
 export interface SlideNavigationProps {
+  slideId: number;
   title?: string;
   active: boolean;
-  onNavClick?: () => void;
+  onNavClick?: (e: React.MouseEvent, id: number) => void;
 }

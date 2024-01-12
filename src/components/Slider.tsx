@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { SlideItem } from './SlideItem';
 
 import styles from  './Slider.module.scss';
@@ -7,16 +7,40 @@ import { SlideNavigation } from './SlideNavigation';
 
 export const Slider: FC<SliderProps> = ({ slides }) => {
 
+  const [activeSlide, setActiveSlide] = useState<number>();
+
+  useEffect(() => {
+    setActiveSlide(slides[0].id);
+  }, []);
+
+  const onNavClick = (e, slideId) => {
+    e.preventDefault();
+    setActiveSlide(slideId);
+  }
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.slideItemContainer}>
-      {slides.map(({ images, url, title }) => (
-          <SlideItem images={images} url={url} title={title} />
+      {slides.map(({ id, images, url, title }) => (
+          <SlideItem
+            key={id}
+            id ={id}
+            images={images}
+            url={url}
+            title={title}
+            active={id === activeSlide ? true : false}
+          />
         ))}
       </div>
       <div className={styles.navigationWrapper}>
-          {slides.map(({title}) => (
-            <SlideNavigation title={title} active={false} />
+          {slides.map(({id, title}) => (
+            <SlideNavigation
+              key={id}
+              slideId={id}
+              title={title}
+              active={id === activeSlide ? true : false} 
+              onNavClick={onNavClick}
+            />
           ))}
       </div>
     </div>

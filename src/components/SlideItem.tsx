@@ -1,10 +1,11 @@
 import { FC, useState } from 'react';
-import { SlideImage } from './SlideImage';
+import cn from 'classnames';
 
+import { SlideImage } from './SlideImage';
 import styles from './SlideItem.module.scss';
 import { SlideItemProps } from './types';
 
-export const SlideItem: FC<SlideItemProps> = ({ images, url, title }) => {
+export const SlideItem: FC<SlideItemProps> = ({ images, url, title, active }) => {
   const [hoverOffset, setHoverOffset] = useState<string>('50%');
 
   const handleSlideHover = (e: React.MouseEvent) => {
@@ -14,11 +15,11 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title }) => {
   };
 
   return (
-      <ul className={styles.slideListParent} onMouseMove={(e) => handleSlideHover(e)}>
+      <ul className={cn(styles.slideListParent, active ? styles.activeSlide : '')} onMouseMove={(e) => handleSlideHover(e)}>
         {images.map(({ src }, index) => (
           <li
             key={index}
-            className={styles.slideItemList}
+            className={cn(styles.slideItemList)}
             //style={{ transform: 'translateY(17px)' }}
           >
             <SlideImage src={src} offset={hoverOffset} />
