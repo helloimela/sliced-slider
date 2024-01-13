@@ -15,16 +15,19 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title, active }) =>
   };
 
   return (
-      <ul className={cn(styles.slideListParent, active ? styles.activeSlide : '')} onMouseMove={(e) => handleSlideHover(e)}>
-        {images.map(({ src }, index) => (
-          <li
-            key={index}
-            className={cn(styles.slideItemList)}
-            //style={{ transform: 'translateY(17px)' }}
-          >
-            <SlideImage src={src} offset={hoverOffset} />
-          </li>
-        ))}
-      </ul>
+      <div className={cn(styles.slideItemContainer, active ? styles.activeSlide : '')}>
+        <h2 className={styles.slideTitle}>{title}</h2>
+        <ul className={cn(styles.slideListParent)} onMouseMove={(e) => handleSlideHover(e)}>
+          {images.map(({ src }, index) => (
+            <li
+              key={index}
+              className={cn(styles.slideItemList)}
+              //style={{ transform: 'translateY(17px)' }}
+            >
+              <SlideImage src={src} offset={hoverOffset} />
+            </li>
+          ))}
+        </ul>
+      </div>
   );
 };
