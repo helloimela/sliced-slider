@@ -6,4 +6,15 @@
   transition: object-position 0.1s ease-in;
   object-fit: cover;
   object-position: 50% 50%;
+  animation:  3s linear 0s slidein;
+}
+
+@keyframes slidein {
+  0% {
+    object-position: 150% 50%;
+  }
+
+  100% {
+    object-position: 100% 50%;
+  }
 }

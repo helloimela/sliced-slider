@@ -13,11 +13,11 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title, active }) =>
     const calcOffset = (e.clientX / innerWidth) * 100;
     setHoverOffset(`${calcOffset}%`);
   };
-
-  return (
-      <div className={cn(styles.slideItemContainer, active ? styles.activeSlide : '')}>
+ 
+  return active ? (
+      <div className={cn(styles.slideItemContainer, active ? styles.activeSlide : '')} onMouseMove={(e) => handleSlideHover(e)}>
         <h2 className={styles.slideTitle}>{title}</h2>
-        <ul className={cn(styles.slideListParent)} onMouseMove={(e) => handleSlideHover(e)}>
+        <ul className={cn(styles.slideListParent)}>
           {images.map(({ src }, index) => (
             <li
               key={index}
@@ -29,5 +29,5 @@ export const SlideItem: FC<SlideItemProps> = ({ images, url, title, active }) =>
           ))}
         </ul>
       </div>
-  );
+  ) : <></>;
 };

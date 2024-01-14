@@ -3,6 +3,7 @@ import * as React from "react";
 export interface SlideImageProps {
   src: string;
   offset?: string;
+  isActive?: boolean;
 }
 
 export interface SlideItemProps {
