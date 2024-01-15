@@ -4,6 +4,7 @@ export interface SlideImageProps {
   src: string;
   offset?: string;
   isActive?: boolean;
+  className?: string;
 }
 
 export interface SlideItemProps {
@@ -12,6 +13,7 @@ export interface SlideItemProps {
   url: string;
   id: number;
   active?: boolean;
+  className?: string;
 }
 
 export interface SliderProps {

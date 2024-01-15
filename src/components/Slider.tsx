@@ -18,6 +18,15 @@ export const Slider: FC<SliderProps> = ({ slides }) => {
     setActiveSlide(slideId);
   }
 
+  const setActiveClass = (id: number, activeId: number): string => {
+    if (id < activeId) {
+      return "inactiveLeft";
+    } else if (id > activeId) {
+      return "inactiveRight";
+    }
+    return "currentActive";
+  }
+
   return (
     <div className={styles.sliderContainer}>
       <div className={styles.slideItemContainer}>
@@ -29,6 +38,7 @@ export const Slider: FC<SliderProps> = ({ slides }) => {
             url={url}
             title={title}
             active={id === activeSlide ? true : false}
+            className={setActiveClass(id, activeSlide)}
           />
         ))}
       </div>

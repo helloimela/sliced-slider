@@ -3,10 +3,21 @@
   margin: 0;
   width: 100%;
   height: 100%;
-  transition: object-position 0.1s ease-in;
-  object-fit: cover;
-  object-position: 50% 50%;
-  animation:  3s linear 0s slidein;
+  transition: transform 0.5s ease-in;
+  background-size: cover;
+  //animation:  3s linear 0s slidein;
+
+  &.inactiveLeft {
+    transform: translateX(-100.5%);
+  }
+
+  &.inactiveRight {
+    transform: translateX(100.5%);
+  }
+
+  &.currentActive {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slidein {

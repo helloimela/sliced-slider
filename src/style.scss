@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family==Numans&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -6,7 +8,14 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Numans', sans-serif;
   color: black;
   background-color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.appContainer {
+  margin-top: 50px;
 }

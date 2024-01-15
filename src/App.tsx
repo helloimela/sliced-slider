@@ -5,7 +5,7 @@ import { slides } from './data';
 
 export const App: FC<{ name: string }> = ({ name }) => {
   return (
-    <div>
+    <div className='appContainer'>
       <Slider slides={slides} />
     </div>
   );
