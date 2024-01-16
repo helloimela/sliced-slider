@@ -19,6 +19,9 @@ export const slides: SlideItemProps[] = [
       {
         src: 'https://picsum.photos/id/16/800/600',
       },
+      {
+        src: 'https://picsum.photos/id/17/800/600',
+      },
     ],
     url: 'https://www.google.com/',
     title: 'When ocean rises',
@@ -41,6 +44,9 @@ export const slides: SlideItemProps[] = [
       {
         src: 'https://picsum.photos/id/70/800/600',
       },
+      {
+        src: 'https://picsum.photos/id/77/800/600',
+      },
     ],
     url: 'https://www.google.com/',
     title: 'Still life perfection',
@@ -61,6 +67,9 @@ export const slides: SlideItemProps[] = [
       },
       {
         src: 'https://picsum.photos/id/46/800/600',
+      },
+      {
+        src: 'https://picsum.photos/id/177/800/600',
       },
     ],
     url: 'https://www.google.com/',
